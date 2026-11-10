@@ -1,0 +1,7 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+Thumbs.db
+node_modules/
+.vercel

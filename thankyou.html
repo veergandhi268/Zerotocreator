@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Successful — Download Zero to Creator</title>
+  <meta name="description" content="Thank you for your purchase! Download your copy of Zero to Creator (2026 Edition).">
+  
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" type="image/jpeg" href="assets/cover.jpg">
+  <!-- Canvas Confetti for celebration -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <!-- Ambient Hardware-Accelerated Background -->
+  <div class="bg-ambient-layer"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand">
+        <span>ZERO TO CREATOR</span>
+        <span class="brand-badge">2026 EDITION</span>
+      </a>
+
+      <div class="nav-cta">
+        <a href="index.html" class="nav-link" style="color: var(--text-muted); font-size: 0.88rem;">
+          ← Back to Main Page
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- THANK YOU MAIN WRAPPER -->
+  <div class="container thankyou-wrapper">
+    
+    <!-- Success Status Box -->
+    <div class="success-badge-card">
+      <div class="success-icon-wrap">✓</div>
+      <h1 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 10px;">
+        Payment Successful! 🎉
+      </h1>
+      <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+        Thank you for investing in yourself. Your order is confirmed and your copy of <strong>Zero to Creator (2026 Edition)</strong> is ready for instant download below.
+      </p>
+
+      <div class="order-pill" id="orderPill">
+        <span>Order ID: <strong id="orderIdDisplay">#ZTC-2026-89421</strong></span> • 
+        <span>Amount Paid: <strong>₹111</strong></span> • 
+        <span>Status: <strong style="color: #34d399;">Confirmed</strong></span>
+      </div>
+    </div>
+
+    <!-- PROMINENT EBOOK DOWNLOAD BANNER -->
+    <div class="thankyou-download-banner">
+      
+      <!-- 3D Book Mockup Display -->
+      <div class="download-book-mockup">
+        <div class="book-container">
+          <div class="book-front">
+            <img src="assets/cover.jpg" alt="Zero to Creator Book Cover">
+            <div class="book-sheen"></div>
+            <div class="book-spine-crease"></div>
+          </div>
+          <div class="book-spine-edge">
+            <span class="book-spine-text">ZERO TO CREATOR</span>
+          </div>
+          <div class="book-pages-side"></div>
+          <div class="book-back"></div>
+          <div class="book-floor-shadow"></div>
+        </div>
+      </div>
+
+      <!-- Download Details & Actions -->
+      <div class="download-content">
+        <div class="edition-pill" style="margin: 0;">
+          <span>✅</span> OFFICIAL DIGITAL EDITION
+        </div>
+
+        <h2>Zero to Creator: The Complete Content Creation Guide</h2>
+        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">
+          Your 67-page comprehensive master guide. Includes all 19 chapters across 4 core parts, plus the entire Appendix Toolkit with 30 hook formulas, weekly review planners, brand pitch templates, and the 90-day launch roadmap.
+        </p>
+
+        <div class="specs-pill-group">
+          <span class="spec-pill">📄 PDF Document</span>
+          <span class="spec-pill">📖 67 Pages (Zero Fluff)</span>
+          <span class="spec-pill">💾 290 KB File Size</span>
+          <span class="spec-pill">📱 Mobile & Tablet Optimized</span>
+          <span class="spec-pill">🔒 Offline Lifetime Access</span>
+        </div>
+
+        <div style="margin-top: 10px;">
+          <!-- Direct download link pointing to the user's PDF -->
+          <a href="downloads/Zero-to-Creator-2026-Edition.pdf" download="Zero-to-Creator-2026-Edition.pdf" class="btn-download" id="downloadBtn">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+            <span>Download eBook (PDF) Now</span>
+          </a>
+          <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 8px;">
+            Click to save directly to your iPhone, Android, iPad, Mac, or PC.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BONUS TOOLKIT QUICK ACCESS SECTION -->
+    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glass); border-radius: var(--radius-lg); padding: 36px; margin-bottom: 40px;">
+      <h3 style="font-size: 1.4rem; margin-bottom: 8px;">🎁 Included Inside Your PDF Download</h3>
+      <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 24px;">
+        All templates and appendices are already embedded in your 67-page eBook file:
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-glass); padding: 18px; border-radius: var(--radius-md);">
+          <div style="color: var(--gold); font-size: 0.8rem; font-weight: 700;">APPENDIX A (Page 60)</div>
+          <h4 style="font-size: 1rem; margin: 6px 0;">30 Hook Swipe File</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted);">Curiosity, bold claim, story & experiment hooks you can copy-paste for short-form video.</p>
+        </div>
+
+        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-glass); padding: 18px; border-radius: var(--radius-md);">
+          <div style="color: var(--teal); font-size: 0.8rem; font-weight: 700;">APPENDIX B (Page 62)</div>
+          <h4 style="font-size: 1rem; margin: 6px 0;">Weekly Content Planner</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted);">The exact tracking sheet layout to log views, watch time, and benchmark your posts.</p>
+        </div>
+
+        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-glass); padding: 18px; border-radius: var(--radius-md);">
+          <div style="color: var(--coral); font-size: 0.8rem; font-weight: 700;">APPENDIX B (Page 63)</div>
+          <h4 style="font-size: 1rem; margin: 6px 0;">Brand Pitch & Email Scripts</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted);">Tested pitch emails for paid brand deals, follow-up messages, and 5-step welcome emails.</p>
+        </div>
+
+        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-glass); padding: 18px; border-radius: var(--radius-md);">
+          <div style="color: var(--indigo); font-size: 0.8rem; font-weight: 700;">CHAPTER 19 (Page 57)</div>
+          <h4 style="font-size: 1rem; margin: 6px 0;">90-Day Execution Roadmap</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted);">Week 1-12 milestones to take you systematically from day zero to your first monetizeable offer.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICKSTART ROADMAP -->
+    <div style="max-width: 800px; margin: 0 auto 40px; text-align: left;">
+      <h3 style="font-size: 1.35rem; margin-bottom: 16px;">🚀 Quickstart: Your First 15 Minutes</h3>
+      <ol style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; padding-left: 20px;">
+        <li><strong style="color: #fff;">Save the PDF:</strong> Tap the green download button above to save it to your device or cloud storage (Google Drive / iCloud / Apple Books).</li>
+        <li><strong style="color: #fff;">Print or bookmark Chapter 19 (Page 57):</strong> This is your 90-day roadmap. Sign your personal commitment statement on Page 58.</li>
+        <li><strong style="color: #fff;">Fill out the Niche Worksheet (Page 12):</strong> Nail down your positioning statement before posting your next video.</li>
+      </ol>
+    </div>
+
+    <!-- NEED HELP BOX -->
+    <div style="text-align: center; border-top: 1px solid var(--border-glass); padding-top: 30px;">
+      <p style="color: var(--text-dim); font-size: 0.88rem;">
+        Having trouble downloading? Email our dedicated support team at 
+        <a href="mailto:support@zerotocreator.com" style="color: var(--gold); text-decoration: underline;">support@zerotocreator.com</a>
+      </p>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Zero to Creator. All rights reserved. Thank you for your support!</p>
+    </div>
+  </footer>
+
+  <script>
+    // Trigger celebratory confetti on page load
+    window.addEventListener('load', () => {
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+
+        setTimeout(() => {
+          confetti({
+            particleCount: 50,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 }
+          });
+          confetti({
+            particleCount: 50,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 }
+          });
+        }, 400);
+      }
+
+      // Check if URL has payment_id from Razorpay
+      const urlParams = new URLSearchParams(window.location.search);
+      const paymentId = urlParams.get('payment_id') || urlParams.get('razorpay_payment_id');
+      if (paymentId) {
+        const orderDisplay = document.getElementById('orderIdDisplay');
+        if (orderDisplay) {
+          orderDisplay.textContent = '#' + paymentId.toUpperCase();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
