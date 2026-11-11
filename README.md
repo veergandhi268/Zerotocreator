@@ -1,3 +1,4 @@
+
 # Zero to Creator (2026 Edition) — High-Converting Sales Funnel
 
 This repository contains the complete, high-converting digital product sales funnel for **"Zero to Creator: The Complete Content Creation Guide (2026 Edition)"**.

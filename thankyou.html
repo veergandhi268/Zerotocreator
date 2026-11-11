@@ -10,6 +10,33 @@
   <link rel="icon" type="image/jpeg" href="assets/cover.jpg">
   <!-- Canvas Confetti for celebration -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1433759205589900');
+    fbq('track', 'PageView');
+    // Track Successful Purchase Conversion (₹111)
+    fbq('track', 'Purchase', {
+      content_name: 'Zero to Creator (2026 Edition)',
+      content_type: 'product',
+      content_ids: ['ztc-2026-ebook'],
+      value: 111,
+      currency: 'INR'
+    });
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1433759205589900&ev=Purchase&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
   <!-- Ambient Hardware-Accelerated Background -->

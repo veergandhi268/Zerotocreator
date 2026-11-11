@@ -18,7 +18,28 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initRecentBuyerToasts();
   initSampleReaderModal();
+  initPixelCheckoutTracking();
 });
+
+/* ---------------------------------------------------------
+   1. META PIXEL INITIATE CHECKOUT TRACKING
+   Fires seamlessly in the background when user clicks to buy
+   --------------------------------------------------------- */
+function initPixelCheckoutTracking() {
+  const ctaLinks = document.querySelectorAll('a[href*="cashfree.com"]');
+  ctaLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout', {
+          content_name: 'Zero to Creator (2026 Edition)',
+          value: 111,
+          currency: 'INR',
+          num_items: 1
+        });
+      }
+    });
+  });
+}
 
 /* ---------------------------------------------------------
    2. BUTTER-SMOOTH STICKY BOTTOM BAR (IntersectionObserver)
