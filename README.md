@@ -62,18 +62,19 @@ This repository is pre-configured with `vercel.json` for 1-click zero-configurat
 
 ---
 
-## 💳 How to Connect Your Razorpay Payment Link
+## 💳 How to Connect Your Cashfree Payment Link
 
-When you create your Razorpay Payment Link or Payment Button in your Razorpay Dashboard:
+When you create your Payment Link in your Cashfree Merchant Dashboard:
 
 1. Open `assets/app.js`.
-2. Look for the top configuration line:
+2. Look for the configuration line at the top:
    ```javascript
-   const RAZORPAY_PAYMENT_URL = ""; 
+   const CASHFREE_PAYMENT_URL = ""; 
    ```
-3. Paste your Razorpay link between the quotes:
+3. Paste your Cashfree Payment Link URL between the quotes:
    ```javascript
-   const RAZORPAY_PAYMENT_URL = "https://rzp.io/l/your-razorpay-link-here";
+   const CASHFREE_PAYMENT_URL = "https://payments.cashfree.com/links/your-cashfree-link-here";
    ```
-4. In your **Razorpay Dashboard** under the Payment Link settings:
-   - Set the **Redirect URL** to your hosted Vercel Thank You page (e.g., `https://your-domain.vercel.app/thankyou`).
+4. In your **Cashfree Dashboard** under Payment Link / Checkout settings:
+   - Set the **Return URL / Redirect URL** to your hosted Vercel Thank You page (e.g., `https://your-domain.vercel.app/thankyou`).
+   - Cashfree will automatically pass the `order_id` and status, which the Thank You page displays dynamically!

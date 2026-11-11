@@ -192,9 +192,9 @@
         }, 400);
       }
 
-      // Check if URL has payment_id from Razorpay
+      // Check if URL has order_id / payment_id from Cashfree or Razorpay
       const urlParams = new URLSearchParams(window.location.search);
-      const paymentId = urlParams.get('payment_id') || urlParams.get('razorpay_payment_id');
+      const paymentId = urlParams.get('order_id') || urlParams.get('cf_id') || urlParams.get('referenceId') || urlParams.get('payment_id') || urlParams.get('razorpay_payment_id');
       if (paymentId) {
         const orderDisplay = document.getElementById('orderIdDisplay');
         if (orderDisplay) {

@@ -1,17 +1,17 @@
 /**
- * ZERO TO CREATOR - HIGH CONVERSION ENGINE & RAZORPAY CONFIG
+ * ZERO TO CREATOR - HIGH CONVERSION ENGINE & CASHFREE CONFIG
  * Optimized for Butter-Smooth 60/120 FPS Performance
  */
 
 // =========================================================================
-// 🚀 RAZORPAY CONFIGURATION
-// Replace this URL with your actual Razorpay Payment Page or Payment Link URL!
-// Example: const RAZORPAY_PAYMENT_URL = "https://rzp.io/l/zerotocreator";
+// 🚀 CASHFREE PAYMENTS CONFIGURATION
+// Replace this URL with your actual Cashfree Payment Link or Payment Page URL!
+// Example: const CASHFREE_PAYMENT_URL = "https://payments.cashfree.com/links/zerotocreator";
 //
-// Leave as "" or "YOUR_RAZORPAY_PAYMENT_LINK" to enable Demo Mode,
+// Leave as "" or "YOUR_CASHFREE_PAYMENT_LINK" to enable Demo Mode,
 // which lets you and your buyers test the complete flow straight to thankyou.html!
 // =========================================================================
-const RAZORPAY_PAYMENT_URL = ""; 
+const CASHFREE_PAYMENT_URL = ""; 
 
 document.addEventListener('DOMContentLoaded', () => {
   initStickyBar();
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ---------------------------------------------------------
-   1. CHECKOUT & RAZORPAY HANDLER
+   1. CHECKOUT & CASHFREE PAYMENTS HANDLER
    --------------------------------------------------------- */
 function initCheckoutButtons() {
   const buyButtons = document.querySelectorAll('.trigger-checkout');
@@ -34,13 +34,13 @@ function initCheckoutButtons() {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
 
-      // If a real Razorpay link has been provided, redirect directly to Razorpay!
-      if (RAZORPAY_PAYMENT_URL && RAZORPAY_PAYMENT_URL.startsWith('http')) {
-        window.location.href = RAZORPAY_PAYMENT_URL;
+      // If a real Cashfree payment link has been provided, redirect directly to Cashfree!
+      if (CASHFREE_PAYMENT_URL && CASHFREE_PAYMENT_URL.startsWith('http')) {
+        window.location.href = CASHFREE_PAYMENT_URL;
         return;
       }
 
-      // Otherwise show modal explaining how to hook up Razorpay and providing 1-click test to thankyou.html
+      // Otherwise show modal explaining how to hook up Cashfree and providing 1-click test to thankyou.html
       if (modal) {
         modal.classList.add('active');
       }
@@ -61,7 +61,7 @@ function initCheckoutButtons() {
 
   if (demoSuccessBtn) {
     demoSuccessBtn.addEventListener('click', () => {
-      window.location.href = 'thankyou.html?status=success&payment_id=pay_sim_' + Math.floor(100000 + Math.random() * 900000);
+      window.location.href = 'thankyou.html?status=success&order_id=cf_sim_' + Math.floor(100000 + Math.random() * 900000);
     });
   }
 }
