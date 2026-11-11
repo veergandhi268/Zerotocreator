@@ -17,54 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickyBar();
   initFaqAccordion();
   initRecentBuyerToasts();
-  initCheckoutButtons();
   initSampleReaderModal();
 });
-
-/* ---------------------------------------------------------
-   1. CHECKOUT & CASHFREE PAYMENTS HANDLER
-   --------------------------------------------------------- */
-function initCheckoutButtons() {
-  const buyButtons = document.querySelectorAll('.trigger-checkout');
-  const modal = document.getElementById('checkoutModal');
-  const closeModalBtn = document.getElementById('closeModalBtn');
-  const demoSuccessBtn = document.getElementById('demoSuccessBtn');
-
-  buyButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      // If a real Cashfree payment link has been provided, redirect directly to Cashfree!
-      if (CASHFREE_PAYMENT_URL && CASHFREE_PAYMENT_URL.startsWith('http')) {
-        window.location.href = CASHFREE_PAYMENT_URL;
-        return;
-      }
-
-      // Otherwise show modal explaining how to hook up Cashfree and providing 1-click test to thankyou.html
-      if (modal) {
-        modal.classList.add('active');
-      }
-    });
-  });
-
-  if (closeModalBtn && modal) {
-    closeModalBtn.addEventListener('click', () => {
-      modal.classList.remove('active');
-    });
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-      }
-    });
-  }
-
-  if (demoSuccessBtn) {
-    demoSuccessBtn.addEventListener('click', () => {
-      window.location.href = 'thankyou.html?status=success&order_id=cf_sim_' + Math.floor(100000 + Math.random() * 900000);
-    });
-  }
-}
 
 /* ---------------------------------------------------------
    2. BUTTER-SMOOTH STICKY BOTTOM BAR (IntersectionObserver)
