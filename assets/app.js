@@ -11,7 +11,7 @@
 // Leave as "" or "YOUR_CASHFREE_PAYMENT_LINK" to enable Demo Mode,
 // which lets you and your buyers test the complete flow straight to thankyou.html!
 // =========================================================================
-const CASHFREE_PAYMENT_URL = ""; 
+const CASHFREE_PAYMENT_URL = "https://payments.cashfree.com/forms/zerotocreator"; 
 
 document.addEventListener('DOMContentLoaded', () => {
   initStickyBar();
