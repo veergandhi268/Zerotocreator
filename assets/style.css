@@ -53,6 +53,9 @@
 
 html {
   font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -61,6 +64,8 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1711,8 +1716,48 @@ img {
 }
 
 /* ========================================================
-   RESPONSIVE DESIGN (MOBILE & TABLET)
+   DEDICATED CUSTOMER SUPPORT CARD
    ======================================================== */
+.support-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-xl);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5);
+}
+
+.support-email-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  max-width: 100%;
+}
+
+.support-email-link {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+.support-email-link:hover {
+  color: var(--gold-light);
+}
+
+/* ========================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE OPTIMIZATIONS)
+   ======================================================== */
+
+/* Tablet (Landscape & Portrait <= 992px) */
 @media (max-width: 992px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -1722,6 +1767,8 @@ img {
 
   .hero-content {
     align-items: center;
+    max-width: 680px;
+    margin: 0 auto;
   }
 
   .edition-pill {
@@ -1730,6 +1777,8 @@ img {
 
   .price-display-card {
     justify-content: center;
+    max-width: 520px;
+    margin: 0 auto;
   }
 
   .curriculum-cards-grid {
@@ -1751,7 +1800,8 @@ img {
   .thankyou-download-banner {
     grid-template-columns: 1fr;
     text-align: center;
-    padding: 32px 24px;
+    padding: 36px 24px;
+    gap: 32px;
   }
 
   .download-content {
@@ -1759,46 +1809,714 @@ img {
   }
 }
 
+/* Mobile Devices & Tablets (<= 768px) */
 @media (max-width: 768px) {
+  /* Layout & Container */
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Top Urgency Ticker */
+  .top-urgency-bar {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    gap: 6px 10px;
+    line-height: 1.35;
+  }
+
+  .ticker-tag {
+    font-size: 0.68rem;
+    padding: 2px 8px;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 10px 0;
+  }
+
   .nav-links {
     display: none;
   }
 
-  .compare-grid {
-    grid-template-columns: 1fr;
+  .nav-brand {
+    font-size: 0.98rem;
+    gap: 8px;
   }
 
-  .bonus-grid {
-    grid-template-columns: 1fr;
+  .brand-badge {
+    font-size: 0.6rem;
+    padding: 2px 6px;
   }
 
-  .pricing-card {
-    padding: 36px 20px;
+  .nav-cta .btn-sm {
+    padding: 8px 14px;
+    font-size: 0.82rem;
   }
 
-  .bonus-box {
-    padding: 30px 20px;
+  /* Hero Section */
+  .hero-section {
+    padding: 36px 0 50px;
+  }
+
+  .edition-pill {
+    font-size: 0.72rem;
+    padding: 6px 14px;
+    max-width: 100%;
+    text-align: center;
+    justify-content: center;
+    white-space: normal;
+    line-height: 1.4;
+    gap: 6px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.85rem, 7.2vw, 2.35rem);
+    line-height: 1.16;
+    margin-bottom: 16px;
+    letter-spacing: -0.025em;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+
+  /* Hero Price Display Card */
+  .price-display-card {
+    padding: 18px 16px;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 14px;
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--radius-md);
+  }
+
+  .price-display-card::before {
+    width: 100%;
+    height: 3px;
+    top: 0;
+    bottom: auto;
+    left: 0;
+  }
+
+  .price-left {
+    align-items: center;
+  }
+
+  .price-row {
+    justify-content: center;
+  }
+
+  .current-price {
+    font-size: 2.2rem;
+  }
+
+  .current-price .currency {
+    font-size: 1.4rem;
+  }
+
+  .price-display-card .btn-primary,
+  .hero-cta-wrapper .btn-primary {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 20px;
+    font-size: 1.05rem;
+  }
+
+  .guarantee-microtext {
+    justify-content: center;
+    gap: 8px 14px;
+    font-size: 0.76rem;
+    text-align: center;
+  }
+
+  /* Hero 3D Book Mockup */
+  .book-banner-wrapper {
+    margin-top: 15px;
+    perspective: 1000px;
   }
 
   .book-container {
-    width: 260px;
-    height: 410px;
+    width: min(250px, 68vw);
+    height: auto;
+    aspect-ratio: 1 / 1.58;
+  }
+
+  .book-3d-stage {
+    transform: rotateY(-12deg) rotateX(4deg);
+  }
+
+  .book-banner-wrapper:hover .book-3d-stage {
+    transform: rotateY(-6deg) rotateX(2deg) scale(1.02);
   }
 
   .book-glow-bg {
-    width: 280px;
-    height: 380px;
+    width: 260px;
+    height: 340px;
   }
 
   .floating-badge {
     display: none;
   }
 
-  .sticky-info h4 {
-    font-size: 0.88rem;
+  /* Trust & Stats */
+  .trust-strip {
+    padding: 24px 0;
+    margin-top: 15px;
   }
 
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 12px;
+  }
+
+  .stat-number {
+    font-size: 1.65rem;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  /* Problem & Compare */
+  .section-problem {
+    padding: 50px 0;
+  }
+
+  .section-header {
+    margin-bottom: 30px;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 5.8vw, 1.95rem);
+    line-height: 1.22;
+    margin-bottom: 12px;
+  }
+
+  .section-desc {
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+  .truth-quote-card {
+    padding: 20px 16px;
+    margin-bottom: 26px;
+    border-radius: var(--radius-md);
+  }
+
+  .truth-quote-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .compare-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .compare-card {
+    padding: 24px 18px;
+    border-radius: var(--radius-md);
+  }
+
+  .compare-title {
+    font-size: 1.15rem;
+    margin-bottom: 16px;
+  }
+
+  .compare-list {
+    gap: 12px;
+  }
+
+  .compare-list li {
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  /* Curriculum Breakdown */
+  .section-curriculum {
+    padding: 50px 0;
+  }
+
+  .curriculum-cards-grid {
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .part-card {
+    padding: 22px 18px;
+    border-radius: var(--radius-md);
+  }
+
+  .part-badge {
+    font-size: 0.68rem;
+    padding: 3px 8px;
+  }
+
+  .part-page-count {
+    font-size: 0.76rem;
+  }
+
+  .part-title {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+  }
+
+  .part-desc {
+    font-size: 0.88rem;
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  .chapter-list {
+    gap: 10px;
+    padding-top: 12px;
+  }
+
+  .chapter-list li {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  /* Bonuses Section */
+  .section-bonuses {
+    padding: 50px 0;
+  }
+
+  .bonus-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .bonus-box {
+    padding: 22px 18px;
+    border-radius: var(--radius-md);
+  }
+
+  .bonus-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+
+  .bonus-title {
+    font-size: 1.08rem;
+  }
+
+  .bonus-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .bonus-value-tag {
+    font-size: 0.76rem;
+    padding: 3px 10px;
+  }
+
+  /* Reviews / Social Proof */
+  .section-reviews {
+    padding: 50px 0;
+  }
+
+  .reviews-grid {
+    gap: 16px;
+  }
+
+  .review-card {
+    padding: 22px 18px;
+    border-radius: var(--radius-md);
+  }
+
+  .review-text {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  /* Main Pricing & Offer Card */
+  .section-pricing {
+    padding: 50px 0;
+  }
+
+  .pricing-card {
+    padding: 32px 16px 26px;
+    border-radius: var(--radius-lg);
+  }
+
+  .offer-ribbon {
+    font-size: 0.72rem;
+    padding: 5px 14px;
+    top: -13px;
+    width: 90%;
+    max-width: 290px;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  .pricing-header h3 {
+    font-size: 1.45rem;
+  }
+
+  .pricing-header p {
+    font-size: 0.85rem;
+  }
+
+  .price-box-main {
+    margin-bottom: 22px;
+  }
+
+  .price-box-main .huge-price {
+    font-size: 3.2rem;
+  }
+
+  .price-box-main .huge-price .rs {
+    font-size: 2rem;
+  }
+
+  .price-box-main .price-was {
+    font-size: 1.25rem;
+    margin-left: 8px;
+  }
+
+  .save-badge-lg {
+    font-size: 0.78rem;
+    padding: 4px 10px;
+  }
+
+  .value-stack-list {
+    padding: 16px 0;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .value-stack-list li {
+    font-size: 0.86rem;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .value-stack-list li .item-left {
+    flex: 1;
+    min-width: 0;
+    line-height: 1.4;
+  }
+
+  .value-stack-list li .item-value {
+    font-size: 0.82rem;
+    flex-shrink: 0;
+  }
+
+  .value-stack-list li.total-value {
+    font-size: 0.95rem;
+  }
+
+  .pricing-actions .btn-primary {
+    width: 100%;
+    justify-content: center;
+    padding: 18px 20px;
+    font-size: 1.05rem;
+  }
+
+  .payment-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .payment-badge-pill {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+
+  .guarantee-box {
+    padding: 20px 16px;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .guarantee-icon {
+    margin: 0 auto;
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+
+  /* FAQ Accordion */
+  .section-faq {
+    padding: 50px 0;
+  }
+
+  .faq-item {
+    margin-bottom: 10px;
+    border-radius: var(--radius-md);
+  }
+
+  .faq-question {
+    padding: 16px 18px;
+    font-size: 0.95rem;
+    gap: 12px;
+  }
+
+  .faq-answer {
+    padding: 0 18px 16px;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  /* Pricing Glow Mobile Adjustment */
+  .pricing-glow {
+    inset: 0;
+  }
+
+  /* Customer Support */
+  .section-support {
+    padding: 30px 0 50px !important;
+  }
+
+  .support-card {
+    padding: 24px 16px !important;
+    border-radius: var(--radius-lg);
+  }
+
+  .support-email-pill {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px 14px;
+    border-radius: var(--radius-md);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .support-email-link {
+    font-size: 0.88rem;
+    word-break: break-all;
+    text-align: center;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 0 calc(95px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .footer-links {
+    gap: 14px 20px;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+  }
+
+  /* Sticky Bottom Mobile Bar (Hardware Accelerated & Safe Area Aware) */
   .sticky-bar {
-    padding: 10px 14px;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .sticky-content {
+    gap: 10px;
+  }
+
+  .sticky-left {
+    gap: 10px;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .sticky-thumb {
+    width: 36px;
+    height: 48px;
+    flex-shrink: 0;
+  }
+
+  .sticky-info {
+    min-width: 0;
+  }
+
+  .sticky-info h4 {
+    font-size: 0.82rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sticky-info p {
+    display: none;
+  }
+
+  .sticky-right {
+    gap: 8px !important;
+    flex-shrink: 0;
+  }
+
+  .sticky-price {
+    font-size: 1.15rem;
+  }
+
+  .sticky-bar .btn-primary {
+    padding: 9px 14px;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  /* Live Buyer Social Proof Toast */
+  .sales-toast {
+    left: 12px;
+    right: 12px;
+    max-width: calc(100% - 24px);
+    bottom: calc(75px + env(safe-area-inset-bottom, 0px));
+    padding: 9px 12px;
+    gap: 10px;
+    border-radius: var(--radius-md);
+  }
+
+  .toast-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+  }
+
+  .toast-body {
+    font-size: 0.75rem;
+  }
+
+  /* Thank You Page (Mobile) */
+  .thankyou-wrapper {
+    padding: 30px 0 60px;
+    min-height: auto;
+  }
+
+  .success-badge-card {
+    margin-bottom: 28px;
+  }
+
+  .success-icon-wrap {
+    width: 64px;
+    height: 64px;
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+
+  .order-pill {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 16px;
+    border-radius: var(--radius-md);
+    font-size: 0.78rem;
+  }
+
+  .thankyou-download-banner {
+    padding: 24px 16px;
+    gap: 24px;
+    border-radius: var(--radius-lg);
+  }
+
+  .download-book-mockup .book-container {
+    width: 180px;
+    height: 280px;
+  }
+
+  .download-content h2 {
+    font-size: 1.35rem;
+  }
+
+  .specs-pill-group {
+    gap: 6px;
+  }
+
+  .spec-pill {
+    font-size: 0.72rem;
+    padding: 3px 8px;
+  }
+
+  .btn-download {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Compact Smartphones (<= 480px, e.g. iPhone 13/14/15/16, Galaxy S, Pixel) */
+@media (max-width: 480px) {
+  .nav-brand {
+    font-size: 0.92rem;
+    gap: 6px;
+  }
+
+  .brand-badge {
+    font-size: 0.58rem;
+    padding: 2px 5px;
+  }
+
+  .nav-cta .btn-sm {
+    padding: 7px 11px;
+    font-size: 0.78rem;
+  }
+
+  .edition-pill {
+    font-size: 0.68rem;
+    padding: 5px 12px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.7rem, 7.8vw, 2.1rem);
+  }
+
+  .current-price {
+    font-size: 2rem;
+  }
+
+  .current-price .currency {
+    font-size: 1.3rem;
+  }
+
+  .price-box-main .huge-price {
+    font-size: 2.85rem;
+  }
+
+  .price-box-main .huge-price .rs {
+    font-size: 1.75rem;
+  }
+
+  .offer-ribbon {
+    font-size: 0.66rem;
+    padding: 4px 10px;
+    max-width: 260px;
+  }
+}
+
+/* Small Screens (<= 360px, e.g. iPhone SE, older phones) */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .brand-badge {
+    display: none;
+  }
+
+  .nav-cta .btn-sm {
+    padding: 6px 9px;
+    font-size: 0.74rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .sticky-info h4 {
+    max-width: 90px;
   }
 }
