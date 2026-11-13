@@ -16,7 +16,6 @@ const CASHFREE_PAYMENT_URL = "https://payments.cashfree.com/forms/zerotocreator"
 document.addEventListener('DOMContentLoaded', () => {
   initStickyBar();
   initFaqAccordion();
-  initRecentBuyerToasts();
   initSampleReaderModal();
   initPixelCheckoutTracking();
 });
@@ -89,50 +88,6 @@ function initFaqAccordion() {
       }
     });
   });
-}
-
-/* ---------------------------------------------------------
-   4. LIVE SOCIAL PROOF NOTIFICATION POPUPS
-   --------------------------------------------------------- */
-function initRecentBuyerToasts() {
-  const toast = document.getElementById('salesToast');
-  if (!toast) return;
-
-  const buyers = [
-    { name: "Rohit V.", city: "Bengaluru", time: "2 minutes ago" },
-    { name: "Priya S.", city: "Mumbai", time: "4 minutes ago" },
-    { name: "Aditya K.", city: "New Delhi", time: "7 minutes ago" },
-    { name: "Sneha M.", city: "Pune", time: "11 minutes ago" },
-    { name: "Arjun R.", city: "Hyderabad", time: "14 minutes ago" },
-    { name: "Tanvi P.", city: "Ahmedabad", time: "18 minutes ago" },
-    { name: "Kunal D.", city: "Kolkata", time: "23 minutes ago" }
-  ];
-
-  let currentIndex = 0;
-
-  function showNextToast() {
-    const buyer = buyers[currentIndex];
-    const avatarEl = toast.querySelector('.toast-avatar');
-    const bodyEl = toast.querySelector('.toast-body');
-
-    if (avatarEl && bodyEl) {
-      avatarEl.textContent = buyer.name.charAt(0);
-      bodyEl.innerHTML = `<strong>${buyer.name}</strong> from ${buyer.city} just grabbed the <strong>Zero to Creator</strong> eBook! <span>${buyer.time} • Verified Purchase</span>`;
-    }
-
-    toast.classList.add('active');
-
-    setTimeout(() => {
-      toast.classList.remove('active');
-    }, 4500);
-
-    currentIndex = (currentIndex + 1) % buyers.length;
-  }
-
-  setTimeout(() => {
-    showNextToast();
-    setInterval(showNextToast, 12000);
-  }, 3500);
 }
 
 /* ---------------------------------------------------------
